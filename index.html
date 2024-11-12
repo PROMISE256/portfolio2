@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Promise Archangel, Network Engineer, Data Analyst, and Software Engineer">
+    <title>Promise Archangel | Portfolio</title>
+    <link rel="stylesheet" href="../css_code/home_styles.css">
+</head>
+<body>
+
+<header>
+    <div class="container header-container">
+        <!-- Left Section: Name and Title -->
+        <div class="header-left">
+            <h1>Promise Archangel</h1>
+            <p>Network Engineer | Data Analyst | Software Engineer</p>
+        </div>
+
+        <!-- Right Section: Navigation Links -->
+        <div class="header-right">
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#blogs">Blogs</a></li>
+                    
+                    <!-- Dropdown for Projects -->
+                    <li class="dropdown">
+                        <a href="#">Projects</a>
+                        <div class="dropdown-content">
+                            <a href="#networking-projects">Networking Projects</a>
+                            <a href="#software-projects">Software Engineering</a>
+                            <a href="#it-support-projects">IT Support</a>
+                            <a href="#data-analysis-projects">Data Analysis</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content Area (Example for Recent Projects) -->
+<section id="recent-projects">
+    <div class="container">
+        <h2>Recent Projects</h2>
+        <div class="project">
+            <h3>Project 1: Network Automation</h3>
+            <p>A network automation project where I used Python to streamline network configurations.</p>
+            <a href="#">View Project</a>
+        </div>
+        <div class="project">
+            <h3>Project 2: Data Visualization Tool</h3>
+            <p>A web-based tool for visualizing large datasets with interactive charts and graphs.</p>
+            <a href="#">View Project</a>
+        </div>
+    </div>
+</section>
+
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const projectLinks = document.querySelectorAll('.dropdown-content a');
+        const projects = document.querySelectorAll('.project');
+
+        projectLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const category = e.target.textContent.toLowerCase();
+                filterProjects(category);
+            });
+        });
+
+        function filterProjects(category) {
+            projects.forEach(project => {
+                if (project.textContent.toLowerCase().includes(category)) {
+                    project.style.display = 'block';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        }
+    });
+</script>
+
+</html>
